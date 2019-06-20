@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title #{title}
+        link( rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+        link( rel="stylesheet" href="/css/main.css")
+    body
+        div.container
+            div.row
+                div(style="display:block")    
+                    h1 #{header}
+            div.row    
+                input.paje_key(type="text" placeholder="key")
+                input.inp_title(type="text" placeholder="title")
+                input.inp_Header(type="text" placeholder="header")
+                input.inp_content(type="text" placeholder="content")
+                input.inp_footer(type="text" placeholder="footer")
+                button.btn "accept_data"
+            div.row 
+                div #{content}
+        div.container
+            diw.row
+                div #{footer}        
+    script(src="/js/main.js")
