@@ -8,8 +8,8 @@ router.get("/",(req,res,next)=>{
     let ct = fs.readFileSync("rest.txt", "utf8");
     let ct1 = JSON.parse(ct);
     console.log("tet");
-    console.log(ct1);
-    console.log(ct1[0].title);
+    // console.log(ct1);
+    // console.log(ct1[0].title);
 
     res.render('index',{
                         title:ct1[0].title,

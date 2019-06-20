@@ -1,6 +1,6 @@
 const express=require('express');
 const app = express();
-const home_page= require ("./routes/home_page");
+
 const path = require('path');
 
 const fs = require('fs');
@@ -19,8 +19,14 @@ app.set("view engine","pug");
 app.set('views','views');
 
 
-
+const home_page = require("./routes/home_page");
 app.use(home_page);
+
+const admin = require("./routes/admin");
+app.use(admin);
+
+
+
 app.listen(3000);
 
 

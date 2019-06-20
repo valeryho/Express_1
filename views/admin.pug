@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title admin
+        link( rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+        link( rel="stylesheet" href="/css/main.css")
+    body
+        
+        h1 Admin
+              
+        form(method='POST' action='/admin')
+            input.paje_key(type="text" placeholder="key" name="key")
+            input.inp_title(type="text" placeholder="title" name="title")
+            input.inp_Header(type="text" placeholder="header" name="header")
+            input.inp_content(type="text" placeholder="content" name="content")
+            input.inp_footer(type="text" placeholder="footer" name="footer")
+            button.btn(type='submit') accept_data     
+
