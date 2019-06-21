@@ -26,6 +26,24 @@ const admin = require("./routes/admin");
 app.use(admin);
 
 
+let rd=[];
+ if (fs.existsSync("rest.txt")){
+    let ct = fs.readFileSync("rest.txt", "utf8");
+    if (ct != "")
+    {
+    let ct1 = JSON.parse(ct);
+    for (let i = 0; i < ct1.length; i++) {
+        console.log(ct1[i].key);
+        rd[i] = require(`./routes/${ct1[i].key}`);
+        app.use(rd[i]);
+        
+        }
+    }
+}
+
+
+
+
 
 app.listen(3000);
 

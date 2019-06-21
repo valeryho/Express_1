@@ -4,18 +4,41 @@ const fs=require('fs');
 
 
 router.get("/",(req,res,next)=>{
-    // fs.writeFile('rest.txt', 'rest', function (error, data) {});
-    let ct = fs.readFileSync("rest.txt", "utf8");
-    let ct1 = JSON.parse(ct);
-    console.log("tet");
-    // console.log(ct1);
-    // console.log(ct1[0].title);
+    let str;
+    if (fs.existsSync("rest.txt")) {
+        let ct = fs.readFileSync("rest.txt", "utf8");
+        if (ct!="")
+        {
+            let t=[];
+            let ct1=JSON.parse(ct);
+            for (let i = 0; i < ct1.length; i++) {
+               t[i]=ct1[i].key;
+                
+            }
+            res.render('index', {t});
+             console.log (t);
 
-    res.render('index',{
-                        title:ct1[0].title,
-                        header:ct1[0].header,
-                        content:ct1[0].content,
-                        footer:ct1[0].footer });
+           
+
+        }
+        else 
+        {
+             res.render('index');
+            
+        }
+    }
+    else
+    res.render('index');
+    
+     
+
+    
+
+    // res.render('index',{
+    //                     title:ct1[0].title,
+    //                     header:ct1[0].header,
+    //                     content:ct1[0].content,
+    //                     footer:ct1[0].footer });
     
 });
 
